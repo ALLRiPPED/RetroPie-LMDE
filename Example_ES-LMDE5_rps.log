@@ -1,0 +1,330 @@
+Log started at: Wed 30 Nov 2022 02:14:09 PM EST
+
+RetroPie-Setup version: 4.8.2 (085235d)
+System: x86_64 (x86_64) - LMDE 5 (elsie) - Linux e6330 5.10.0-19-amd64 #1 SMP Debian 5.10.149-2 (2022-10-21) x86_64 GNU/Linux
+
+= = = = = = = = = = = = = = = = = = = = =
+Installing dependencies for 'emulationstation' : EmulationStation - Frontend used by RetroPie for launching emulators
+= = = = = = = = = = = = = = = = = = = = =
+
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation /home/lmde/RetroPie-Setup
+
+= = = = = = = = = = = = = = = = = = = = =
+Getting sources for 'emulationstation' : EmulationStation - Frontend used by RetroPie for launching emulators
+= = = = = = = = = = = = = = = = = = = = =
+
+git clone --recursive --depth 1 --shallow-submodules --branch v2.7.6 "https://github.com/RetroPie/EmulationStation" "/home/lmde/RetroPie-Setup/tmp/build/emulationstation"
+Cloning into '/home/lmde/RetroPie-Setup/tmp/build/emulationstation'...
+Note: switching to '920db2b620499574e1ba87c263f9bb88de4be8d5'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Submodule 'external/pugixml' (https://github.com/zeux/pugixml.git) registered for path 'external/pugixml'
+Cloning into '/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/pugixml'...
+From https://github.com/zeux/pugixml
+ * branch            d2deb420bc70369faa12785df2b5dd4d390e523d -> FETCH_HEAD
+Submodule path 'external/pugixml': checked out 'd2deb420bc70369faa12785df2b5dd4d390e523d'
+HEAD is now in branch 'HEAD' at commit '920db2b620499574e1ba87c263f9bb88de4be8d5'
+/home/lmde/RetroPie-Setup
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation /home/lmde/RetroPie-Setup
+
+= = = = = = = = = = = = = = = = = = = = =
+Building 'emulationstation' : EmulationStation - Frontend used by RetroPie for launching emulators
+= = = = = = = = = = = = = = = = = = = = =
+
+Removing additional swap
+-- The C compiler identification is GNU 10.2.1
+-- The CXX compiler identification is GNU 10.2.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Warning (dev) at /usr/share/cmake-3.18/Modules/FindOpenGL.cmake:305 (message):
+  Policy CMP0072 is not set: FindOpenGL prefers GLVND by default when
+  available.  Run "cmake --help-policy CMP0072" for policy details.  Use the
+  cmake_policy command to set the policy and suppress this warning.
+
+  FindOpenGL found both a legacy GL library:
+
+    OPENGL_gl_LIBRARY: /usr/lib/x86_64-linux-gnu/libGL.so
+
+  and GLVND libraries for OpenGL and GLX:
+
+    OPENGL_opengl_LIBRARY: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+    OPENGL_glx_LIBRARY: /usr/lib/x86_64-linux-gnu/libGLX.so
+
+  OpenGL_GL_PREFERENCE has not been set to "GLVND" or "LEGACY", so for
+  compatibility with CMake 3.10 and below the legacy GL library will be used.
+Call Stack (most recent call first):
+  CMakeLists.txt:45 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so   
+-- Found Freetype: /usr/lib/x86_64-linux-gnu/libfreetype.so (found version "2.10.4") 
+-- Looking for FreeImage...
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+-- Checking for module 'freeimage'
+--   No package 'freeimage' found
+-- Found FreeImage: optimized;/usr/lib/x86_64-linux-gnu/libfreeimage.so;debug;/usr/lib/x86_64-linux-gnu/libfreeimage.so
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found SDL2: /usr/lib/x86_64-linux-gnu/libSDL2main.a;/usr/lib/x86_64-linux-gnu/libSDL2.so;-lpthread  
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time 
+-- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.74.0")  
+-- Checking for module 'libvlc>=1.0.0'
+--   Found libvlc, version 3.0.17.4
+-- VLC library found
+-- Found VLC: /usr/include/vlc  
+-- Looking for libCEC...
+-- Checking for module 'libcec'
+--   No package 'libcec' found
+-- Could not locate libCEC
+-- Found ALSA: /usr/lib/x86_64-linux-gnu/libasound.so (found version "1.2.4") 
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    USE_GL21
+
+
+-- Build files have been written to: /home/lmde/RetroPie-Setup/tmp/build/emulationstation
+/usr/bin/cmake -S/home/lmde/RetroPie-Setup/tmp/build/emulationstation -B/home/lmde/RetroPie-Setup/tmp/build/emulationstation --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/lmde/RetroPie-Setup/tmp/build/emulationstation/CMakeFiles /home/lmde/RetroPie-Setup/tmp/build/emulationstation//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make[1]: Entering directory '/home/lmde/RetroPie-Setup/tmp/build/emulationstation'
+make  -f external/nanosvg/CMakeFiles/nanosvg.dir/build.make external/nanosvg/CMakeFiles/nanosvg.dir/depend
+make  -f external/pugixml/CMakeFiles/pugixml.dir/build.make external/pugixml/CMakeFiles/pugixml.dir/depend
+make[2]: Entering directory '/home/lmde/RetroPie-Setup/tmp/build/emulationstation'
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/lmde/RetroPie-Setup/tmp/build/emulationstation /home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/nanosvg /home/lmde/RetroPie-Setup/tmp/build/emulationstation /home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/nanosvg /home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/nanosvg/CMakeFiles/nanosvg.dir/DependInfo.cmake --color=
+make[2]: Entering directory '/home/lmde/RetroPie-Setup/tmp/build/emulationstation'
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/lmde/RetroPie-Setup/tmp/build/emulationstation /home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/pugixml /home/lmde/RetroPie-Setup/tmp/build/emulationstation /home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/pugixml /home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/pugixml/CMakeFiles/pugixml.dir/DependInfo.cmake --color=
+Dependee "/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/nanosvg/CMakeFiles/nanosvg.dir/DependInfo.cmake" is newer than depender "/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/nanosvg/CMakeFiles/nanosvg.dir/depend.internal".
+Dependee "/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/pugixml/CMakeFiles/pugixml.dir/DependInfo.cmake" is newer than depender "/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/pugixml/CMakeFiles/pugixml.dir/depend.internal".
+Dependee "/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/pugixml/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/pugixml/CMakeFiles/pugixml.dir/depend.internal".
+Dependee "/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/nanosvg/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/nanosvg/CMakeFiles/nanosvg.dir/depend.internal".
+Scanning dependencies of target nanosvg
+make[2]: Leaving directory '/home/lmde/RetroPie-Setup/tmp/build/emulationstation'
+make  -f external/nanosvg/CMakeFiles/nanosvg.dir/build.make external/nanosvg/CMakeFiles/nanosvg.dir/build
+Scanning dependencies of target pugixml
+make[2]: Entering directory '/home/lmde/RetroPie-Setup/tmp/build/emulationstation'
+make[2]: Leaving directory '/home/lmde/RetroPie-Setup/tmp/build/emulationstation'
+make  -f external/pugixml/CMakeFiles/pugixml.dir/build.make external/pugixml/CMakeFiles/pugixml.dir/build
+make[2]: Entering directory '/home/lmde/RetroPie-Setup/tmp/build/emulationstation'
+[  0%] Building CXX object external/nanosvg/CMakeFiles/nanosvg.dir/src/nanosvg_impl.cpp.o
+[  1%] Building CXX object external/pugixml/CMakeFiles/pugixml.dir/src/pugixml.cpp.o
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/nanosvg && /usr/bin/c++ -DUSE_OPENGL_DESKTOP -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/nanosvg -march=native -O2 -std=c++11 -Wno-attributes -O2 -o CMakeFiles/nanosvg.dir/src/nanosvg_impl.cpp.o -c /home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/nanosvg/src/nanosvg_impl.cpp
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/pugixml && /usr/bin/c++ -DUSE_OPENGL_DESKTOP  -march=native -O2 -std=c++11 -Wno-attributes -O2 -o CMakeFiles/pugixml.dir/src/pugixml.cpp.o -c /home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/pugixml/src/pugixml.cpp
+[  2%] Linking CXX static library ../../libnanosvg.a
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/nanosvg && /usr/bin/cmake -P CMakeFiles/nanosvg.dir/cmake_clean_target.cmake
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/nanosvg && /usr/bin/cmake -E cmake_link_script CMakeFiles/nanosvg.dir/link.txt --verbose=1
+/usr/bin/ar qc ../../libnanosvg.a CMakeFiles/nanosvg.dir/src/nanosvg_impl.cpp.o
+/usr/bin/ranlib ../../libnanosvg.a
+make[2]: Leaving directory '/home/lmde/RetroPie-Setup/tmp/build/emulationstation'
+[  2%] Built target nanosvg
+[  3%] Linking CXX static library ../../libpugixml.a
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/pugixml && /usr/bin/cmake -P CMakeFiles/pugixml.dir/cmake_clean_target.cmake
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/pugixml && /usr/bin/cmake -E cmake_link_script CMakeFiles/pugixml.dir/link.txt --verbose=1
+/usr/bin/ar qc ../../libpugixml.a CMakeFiles/pugixml.dir/src/pugixml.cpp.o
+/usr/bin/ranlib ../../libpugixml.a
+make[2]: Leaving directory '/home/lmde/RetroPie-Setup/tmp/build/emulationstation'
+[  3%] Built target pugixml
+make  -f es-core/CMakeFiles/es-core.dir/build.make es-core/CMakeFiles/es-core.dir/depend
+make[2]: Entering directory '/home/lmde/RetroPie-Setup/tmp/build/emulationstation'
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/lmde/RetroPie-Setup/tmp/build/emulationstation /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core /home/lmde/RetroPie-Setup/tmp/build/emulationstation /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/CMakeFiles/es-core.dir/DependInfo.cmake --color=
+Dependee "/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/CMakeFiles/es-core.dir/DependInfo.cmake" is newer than depender "/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/CMakeFiles/es-core.dir/depend.internal".
+Dependee "/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/CMakeFiles/es-core.dir/depend.internal".
+Scanning dependencies of target es-core
+make[2]: Leaving directory '/home/lmde/RetroPie-Setup/tmp/build/emulationstation'
+make  -f es-core/CMakeFiles/es-core.dir/build.make es-core/CMakeFiles/es-core.dir/build
+make[2]: Entering directory '/home/lmde/RetroPie-Setup/tmp/build/emulationstation'
+[  4%] Building CXX object es-core/CMakeFiles/es-core.dir/src/CECInput.cpp.o
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core && /usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DUSE_OPENGL_DESKTOP -I/usr/include/freetype2 -I/usr/include/SDL2 -I/usr/include/vlc -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src -march=native -O2 -std=c++11 -Wno-attributes -O2 -o CMakeFiles/es-core.dir/src/CECInput.cpp.o -c /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/CECInput.cpp
+[  5%] Building CXX object es-core/CMakeFiles/es-core.dir/src/AudioManager.cpp.o
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core && /usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DUSE_OPENGL_DESKTOP -I/usr/include/freetype2 -I/usr/include/SDL2 -I/usr/include/vlc -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src -march=native -O2 -std=c++11 -Wno-attributes -O2 -o CMakeFiles/es-core.dir/src/AudioManager.cpp.o -c /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/AudioManager.cpp
+[  5%] Building CXX object es-core/CMakeFiles/es-core.dir/src/GuiComponent.cpp.o
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core && /usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DUSE_OPENGL_DESKTOP -I/usr/include/freetype2 -I/usr/include/SDL2 -I/usr/include/vlc -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src -march=native -O2 -std=c++11 -Wno-attributes -O2 -o CMakeFiles/es-core.dir/src/GuiComponent.cpp.o -c /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/GuiComponent.cpp
+[  6%] Building CXX object es-core/CMakeFiles/es-core.dir/src/HelpStyle.cpp.o
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core && /usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DUSE_OPENGL_DESKTOP -I/usr/include/freetype2 -I/usr/include/SDL2 -I/usr/include/vlc -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src -march=native -O2 -std=c++11 -Wno-attributes -O2 -o CMakeFiles/es-core.dir/src/HelpStyle.cpp.o -c /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/HelpStyle.cpp
+[  7%] Building CXX object es-core/CMakeFiles/es-core.dir/src/HttpReq.cpp.o
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core && /usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DUSE_OPENGL_DESKTOP -I/usr/include/freetype2 -I/usr/include/SDL2 -I/usr/include/vlc -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src -march=native -O2 -std=c++11 -Wno-attributes -O2 -o CMakeFiles/es-core.dir/src/HttpReq.cpp.o -c /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/HttpReq.cpp
+[  7%] Building CXX object es-core/CMakeFiles/es-core.dir/src/ImageIO.cpp.o
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core && /usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DUSE_OPENGL_DESKTOP -I/usr/include/freetype2 -I/usr/include/SDL2 -I/usr/include/vlc -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src -march=native -O2 -std=c++11 -Wno-attributes -O2 -o CMakeFiles/es-core.dir/src/ImageIO.cpp.o -c /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/ImageIO.cpp
+[  8%] Building CXX object es-core/CMakeFiles/es-core.dir/src/InputConfig.cpp.o
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core && /usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DUSE_OPENGL_DESKTOP -I/usr/include/freetype2 -I/usr/include/SDL2 -I/usr/include/vlc -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src -march=native -O2 -std=c++11 -Wno-attributes -O2 -o CMakeFiles/es-core.dir/src/InputConfig.cpp.o -c /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputConfig.cpp
+[  9%] Building CXX object es-core/CMakeFiles/es-core.dir/src/InputManager.cpp.o
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core && /usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DUSE_OPENGL_DESKTOP -I/usr/include/freetype2 -I/usr/include/SDL2 -I/usr/include/vlc -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src -march=native -O2 -std=c++11 -Wno-attributes -O2 -o CMakeFiles/es-core.dir/src/InputManager.cpp.o -c /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp
+[  9%] Building CXX object es-core/CMakeFiles/es-core.dir/src/Log.cpp.o
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core && /usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DUSE_OPENGL_DESKTOP -I/usr/include/freetype2 -I/usr/include/SDL2 -I/usr/include/vlc -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src -march=native -O2 -std=c++11 -Wno-attributes -O2 -o CMakeFiles/es-core.dir/src/Log.cpp.o -c /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/Log.cpp
+In file included from /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp:1:
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.h:44:14: error: ‘string’ in namespace ‘std’ does not name a type
+   44 |  static std::string getConfigPath();
+      |              ^~~~~~
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.h:7:1: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+    6 | #include <map>
+  +++ |+#include <string>
+    7 | 
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.h:45:14: error: ‘string’ in namespace ‘std’ does not name a type
+   45 |  static std::string getTemporaryConfigPath();
+      |              ^~~~~~
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.h:45:9: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+   45 |  static std::string getTemporaryConfigPath();
+      |         ^~~
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.h:54:7: error: ‘string’ in namespace ‘std’ does not name a type
+   54 |  std::string getDeviceGUIDString(int deviceId);
+      |       ^~~~~~
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.h:54:2: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+   54 |  std::string getDeviceGUIDString(int deviceId);
+      |  ^~~
+[ 10%] Building CXX object es-core/CMakeFiles/es-core.dir/src/platform.cpp.o
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core && /usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DUSE_OPENGL_DESKTOP -I/usr/include/freetype2 -I/usr/include/SDL2 -I/usr/include/vlc -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src -march=native -O2 -std=c++11 -Wno-attributes -O2 -o CMakeFiles/es-core.dir/src/platform.cpp.o -c /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/platform.cpp
+[ 11%] Building CXX object es-core/CMakeFiles/es-core.dir/src/PowerSaver.cpp.o
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core && /usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DUSE_OPENGL_DESKTOP -I/usr/include/freetype2 -I/usr/include/SDL2 -I/usr/include/vlc -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src -march=native -O2 -std=c++11 -Wno-attributes -O2 -o CMakeFiles/es-core.dir/src/PowerSaver.cpp.o -c /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp
+[ 11%] Building CXX object es-core/CMakeFiles/es-core.dir/src/Renderer_draw_gl.cpp.o
+cd /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core && /usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DUSE_OPENGL_DESKTOP -I/usr/include/freetype2 -I/usr/include/SDL2 -I/usr/include/vlc -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external -I/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src -march=native -O2 -std=c++11 -Wno-attributes -O2 -o CMakeFiles/es-core.dir/src/Renderer_draw_gl.cpp.o -c /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/Renderer_draw_gl.cpp
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp: In static member function ‘static void PowerSaver::loadWakeupTime()’:
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp:31:14: error: variable ‘std::string behaviour’ has initializer but incomplete type
+   31 |  std::string behaviour = Settings::getInstance()->getString("ScreenSaverBehavior");
+      |              ^~~~~~~~~
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp:31:61: error: cannot convert ‘const char [20]’ to ‘const string&’ {aka ‘const std::__cxx11::basic_string<char>&’}
+   31 |  std::string behaviour = Settings::getInstance()->getString("ScreenSaverBehavior");
+      |                                                             ^~~~~~~~~~~~~~~~~~~~~
+      |                                                             |
+      |                                                             const char [20]
+In file included from /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp:4:
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/Settings.h:20:50: note:   initializing argument 1 of ‘const string& Settings::getString(const string&)’
+   20 |  const std::string& getString(const std::string& name);
+      |                               ~~~~~~~~~~~~~~~~~~~^~~~
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp:33:52: error: cannot convert ‘const char [28]’ to ‘const string&’ {aka ‘const std::__cxx11::basic_string<char>&’}
+   33 |   mWakeupTimeout = Settings::getInstance()->getInt("ScreenSaverSwapVideoTimeout") - getMode();
+      |                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                    |
+      |                                                    const char [28]
+In file included from /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp:4:
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/Settings.h:18:32: note:   initializing argument 1 of ‘int Settings::getInt(const string&)’
+   18 |  int getInt(const std::string& name);
+      |             ~~~~~~~~~~~~~~~~~~~^~~~
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp:35:52: error: cannot convert ‘const char [28]’ to ‘const string&’ {aka ‘const std::__cxx11::basic_string<char>&’}
+   35 |   mWakeupTimeout = Settings::getInstance()->getInt("ScreenSaverSwapImageTimeout") - getMode();
+      |                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                    |
+      |                                                    const char [28]
+In file included from /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp:4:
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/Settings.h:18:32: note:   initializing argument 1 of ‘int Settings::getInt(const string&)’
+   18 |  int getInt(const std::string& name);
+      |             ~~~~~~~~~~~~~~~~~~~^~~~
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp: In static member function ‘static void PowerSaver::updateTimeouts()’:
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp:42:71: error: cannot convert ‘const char [16]’ to ‘const string&’ {aka ‘const std::__cxx11::basic_string<char>&’}
+   42 |  mScreenSaverTimeout = (unsigned int) Settings::getInstance()->getInt("ScreenSaverTime");
+      |                                                                       ^~~~~~~~~~~~~~~~~
+      |                                                                       |
+      |                                                                       const char [16]
+In file included from /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp:4:
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/Settings.h:18:32: note:   initializing argument 1 of ‘int Settings::getInt(const string&)’
+   18 |  int getInt(const std::string& name);
+      |             ~~~~~~~~~~~~~~~~~~~^~~~
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp: In static member function ‘static void PowerSaver::updateMode()’:
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp:54:14: error: variable ‘std::string mode’ has initializer but incomplete type
+   54 |  std::string mode = Settings::getInstance()->getString("PowerSaverMode");
+      |              ^~~~
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp:54:56: error: cannot convert ‘const char [15]’ to ‘const string&’ {aka ‘const std::__cxx11::basic_string<char>&’}
+   54 |  std::string mode = Settings::getInstance()->getString("PowerSaverMode");
+      |                                                        ^~~~~~~~~~~~~~~~
+      |                                                        |
+      |                                                        const char [15]
+In file included from /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp:4:
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/Settings.h:20:50: note:   initializing argument 1 of ‘const string& Settings::getString(const string&)’
+   20 |  const std::string& getString(const std::string& name);
+      |                               ~~~~~~~~~~~~~~~~~~~^~~~
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp: In static member function ‘static void PowerSaver::setState(bool)’:
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp:75:55: error: cannot convert ‘const char [15]’ to ‘const string&’ {aka ‘const std::__cxx11::basic_string<char>&’}
+   75 |  bool ps_enabled = Settings::getInstance()->getString("PowerSaverMode") != "disabled";
+      |                                                       ^~~~~~~~~~~~~~~~
+      |                                                       |
+      |                                                       const char [15]
+In file included from /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/PowerSaver.cpp:4:
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/Settings.h:20:50: note:   initializing argument 1 of ‘const string& Settings::getString(const string&)’
+   20 |  const std::string& getString(const std::string& name);
+      |                               ~~~~~~~~~~~~~~~~~~~^~~~
+make[2]: *** [es-core/CMakeFiles/es-core.dir/build.make:212: es-core/CMakeFiles/es-core.dir/src/PowerSaver.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp: In member function ‘bool InputManager::loadInputConfig(InputConfig*)’:
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp:281:21: error: ‘getConfigPath’ was not declared in this scope; did you mean ‘getHomePath’?
+  281 |  std::string path = getConfigPath();
+      |                     ^~~~~~~~~~~~~
+      |                     getHomePath
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp: In member function ‘void InputManager::writeDeviceConfig(InputConfig*)’:
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp:333:21: error: ‘getConfigPath’ was not declared in this scope; did you mean ‘getHomePath’?
+  333 |  std::string path = getConfigPath();
+      |                     ^~~~~~~~~~~~~
+      |                     getHomePath
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp:356:13: error: ‘getTemporaryConfigPath’ was not declared in this scope
+  356 |      path = getTemporaryConfigPath();
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp: In member function ‘void InputManager::doOnFinish()’:
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp:395:21: error: ‘getConfigPath’ was not declared in this scope; did you mean ‘getHomePath’?
+  395 |  std::string path = getConfigPath();
+      |                     ^~~~~~~~~~~~~
+      |                     getHomePath
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp: At global scope:
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp:434:13: error: no declaration matches ‘std::string InputManager::getConfigPath()’
+  434 | std::string InputManager::getConfigPath()
+      |             ^~~~~~~~~~~~
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp:434:13: note: no functions named ‘std::string InputManager::getConfigPath()’
+In file included from /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp:1:
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.h:13:7: note: ‘class InputManager’ defined here
+   13 | class InputManager
+      |       ^~~~~~~~~~~~
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp:441:13: error: no declaration matches ‘std::string InputManager::getTemporaryConfigPath()’
+  441 | std::string InputManager::getTemporaryConfigPath()
+      |             ^~~~~~~~~~~~
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp:441:13: note: no functions named ‘std::string InputManager::getTemporaryConfigPath()’
+In file included from /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp:1:
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.h:13:7: note: ‘class InputManager’ defined here
+   13 | class InputManager
+      |       ^~~~~~~~~~~~
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp:471:13: error: no declaration matches ‘std::string InputManager::getDeviceGUIDString(int)’
+  471 | std::string InputManager::getDeviceGUIDString(int deviceId)
+      |             ^~~~~~~~~~~~
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp:471:13: note: no functions named ‘std::string InputManager::getDeviceGUIDString(int)’
+In file included from /home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.cpp:1:
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation/es-core/src/InputManager.h:13:7: note: ‘class InputManager’ defined here
+   13 | class InputManager
+      |       ^~~~~~~~~~~~
+make[2]: *** [es-core/CMakeFiles/es-core.dir/build.make:173: es-core/CMakeFiles/es-core.dir/src/InputManager.cpp.o] Error 1
+make[2]: Leaving directory '/home/lmde/RetroPie-Setup/tmp/build/emulationstation'
+make[1]: *** [CMakeFiles/Makefile2:249: es-core/CMakeFiles/es-core.dir/all] Error 2
+make[1]: Leaving directory '/home/lmde/RetroPie-Setup/tmp/build/emulationstation'
+make: *** [Makefile:171: all] Error 2
+Removing additional swap
+Could not successfully build emulationstation - EmulationStation - Frontend used by RetroPie for launching emulators (/home/lmde/RetroPie-Setup/tmp/build/emulationstation/emulationstation not found).
+/home/lmde/RetroPie-Setup
+
+Log ended at: Wed 30 Nov 2022 02:14:24 PM EST
+Total running time: 0 hours, 0 mins, 15 secs
