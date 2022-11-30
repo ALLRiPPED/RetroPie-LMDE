@@ -15,7 +15,7 @@ sudo chmod 755 ~/rp_lmde.sh
 
 **Issues with Basic Install of RetroPie-Setup in LMDE:**  
 RetroPie-Setup identifies LMDE as a Debian derivative less than 9 and applies [libpng12-dev] instead of [libpng-dev].  
-EmulationStation Fails to GIT.
+EmulationStation Fails to make install due to what appears to be missing Boost libraries [libboost-date-time-dev].
 
 **Tweaks Applied:**  
 *[~/RetroPie-Setup/scriptmodules/helpers.sh]*:  
