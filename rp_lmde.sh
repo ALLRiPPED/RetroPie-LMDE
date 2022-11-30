@@ -10,7 +10,7 @@ echo ''
 prereqsREF=$(
 echo '
 
-sudo apt-get install libpng-dev git dialog unzip xmlstarlet libsdl2-dev libfreeimage-dev libfreetype6-dev libcurl4-openssl-dev rapidjson-dev libasound2-dev libgles2-mesa-dev build-essential cmake libvlc-dev libvlccore-dev vlc-bin fonts-droid-fallback flex bison libglew-dev libsamplerate0-dev libspeexdsp-dev libboost-filesystem-dev nasm
+sudo apt-get install libpng-dev libboost-date-time-dev git dialog unzip xmlstarlet libsdl2-dev libfreeimage-dev libfreetype6-dev libcurl4-openssl-dev rapidjson-dev libasound2-dev libgles2-mesa-dev build-essential cmake libvlc-dev libvlccore-dev vlc-bin fonts-droid-fallback flex bison libglew-dev libsamplerate0-dev libspeexdsp-dev libboost-filesystem-dev nasm
 
 ')
 
@@ -77,7 +77,7 @@ if [ "$installESBflag" == '1' ]; then
 	if [ "$confPREreqs" == 'Y' ]; then
 		tput reset
 		# Debian Bullseye RetroPie + ES PreReqs
-		sudo apt-get install -y git dialog unzip xmlstarlet
+		sudo apt-get install -y git dialog unzip xmlstarlet libboost-date-time-dev
 		sudo apt-get install -y libsdl2-dev libfreeimage-dev libfreetype6-dev libcurl4-openssl-dev rapidjson-dev libasound2-dev libgles2-mesa-dev build-essential cmake libvlc-dev libvlccore-dev vlc-bin fonts-droid-fallback
 		sudo apt-get install -y flex bison libglew-dev nasm
 		sudo apt-get install -y libsamplerate0-dev libspeexdsp-dev libpng-dev libboost-filesystem-dev libglew-dev nasm #libpng12-dev Depricated #libpng-dev
