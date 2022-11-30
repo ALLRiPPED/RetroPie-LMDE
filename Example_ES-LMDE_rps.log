@@ -1,0 +1,133 @@
+Log started at: Wed 30 Nov 2022 01:10:53 PM EST
+
+RetroPie-Setup version: 4.8.2 (085235d)
+System: x86_64 (x86_64) - LMDE 4 (debbie) - Linux asrocks3 4.19.0-18-amd64 #1 SMP Debian 4.19.208-1 (2021-09-29) x86_64 GNU/Linux
+
+= = = = = = = = = = = = = = = = = = = = =
+Installing dependencies for 'emulationstation' : EmulationStation - Frontend used by RetroPie for launching emulators
+= = = = = = = = = = = = = = = = = = = = =
+
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation /home/lmde/RetroPie-Setup
+
+= = = = = = = = = = = = = = = = = = = = =
+Getting sources for 'emulationstation' : EmulationStation - Frontend used by RetroPie for launching emulators
+= = = = = = = = = = = = = = = = = = = = =
+
+git clone --recursive --depth 1 --shallow-submodules --branch v2.7.6 "https://github.com/RetroPie/EmulationStation" "/home/lmde/RetroPie-Setup/tmp/build/emulationstation"
+Cloning into '/home/lmde/RetroPie-Setup/tmp/build/emulationstation'...
+Note: checking out '920db2b620499574e1ba87c263f9bb88de4be8d5'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+Submodule 'external/pugixml' (https://github.com/zeux/pugixml.git) registered for path 'external/pugixml'
+Cloning into '/home/lmde/RetroPie-Setup/tmp/build/emulationstation/external/pugixml'...
+From https://github.com/zeux/pugixml
+ * branch            d2deb420bc70369faa12785df2b5dd4d390e523d -> FETCH_HEAD
+Submodule path 'external/pugixml': checked out 'd2deb420bc70369faa12785df2b5dd4d390e523d'
+HEAD is now in branch 'HEAD' at commit '920db2b620499574e1ba87c263f9bb88de4be8d5'
+/home/lmde/RetroPie-Setup
+/home/lmde/RetroPie-Setup/tmp/build/emulationstation /home/lmde/RetroPie-Setup
+
+= = = = = = = = = = = = = = = = = = = = =
+Building 'emulationstation' : EmulationStation - Frontend used by RetroPie for launching emulators
+= = = = = = = = = = = = = = = = = = = = =
+
+Removing additional swap
+-- The C compiler identification is GNU 8.3.0
+-- The CXX compiler identification is GNU 8.3.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Warning (dev) at /usr/share/cmake-3.13/Modules/FindOpenGL.cmake:270 (message):
+  Policy CMP0072 is not set: FindOpenGL prefers GLVND by default when
+  available.  Run "cmake --help-policy CMP0072" for policy details.  Use the
+  cmake_policy command to set the policy and suppress this warning.
+
+  FindOpenGL found both a legacy GL library:
+
+    OPENGL_gl_LIBRARY: /usr/lib/x86_64-linux-gnu/libGL.so
+
+  and GLVND libraries for OpenGL and GLX:
+
+    OPENGL_opengl_LIBRARY: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+    OPENGL_glx_LIBRARY: /usr/lib/x86_64-linux-gnu/libGLX.so
+
+  OpenGL_GL_PREFERENCE has not been set to "GLVND" or "LEGACY", so for
+  compatibility with CMake 3.10 and below the legacy GL library will be used.
+Call Stack (most recent call first):
+  CMakeLists.txt:45 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so   
+-- Found Freetype: /usr/lib/x86_64-linux-gnu/libfreetype.so (found version "2.9.1") 
+-- Looking for FreeImage...
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29") 
+-- Checking for module 'freeimage'
+--   No package 'freeimage' found
+-- Found FreeImage: optimized;/usr/lib/x86_64-linux-gnu/libfreeimage.so;debug;/usr/lib/x86_64-linux-gnu/libfreeimage.so
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found SDL2: /usr/lib/x86_64-linux-gnu/libSDL2main.a;/usr/lib/x86_64-linux-gnu/libSDL2.so;-lpthread  
+CMake Error at /usr/share/cmake-3.13/Modules/FindBoost.cmake:2100 (message):
+  Unable to find the requested Boost libraries.
+
+  Boost version: 1.67.0
+
+  Boost include path: /usr/include
+
+  Could not find the following Boost libraries:
+
+          boost_date_time
+
+  Some (but not all) of the required Boost libraries were found.  You may
+  need to install these additional Boost libraries.  Alternatively, set
+  BOOST_LIBRARYDIR to the directory containing Boost libraries or BOOST_ROOT
+  to the location of Boost.
+Call Stack (most recent call first):
+  CMakeLists.txt:55 (find_package)
+
+
+-- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.64.0") 
+-- Checking for module 'libvlc>=1.0.0'
+--   Found libvlc, version 3.0.17.4
+-- VLC library found
+-- Found VLC: /usr/include/vlc  
+-- Looking for libCEC...
+-- Checking for module 'libcec'
+--   No package 'libcec' found
+-- Could not locate libCEC
+-- Found ALSA: /usr/lib/x86_64-linux-gnu/libasound.so (found version "1.1.8") 
+-- Configuring incomplete, errors occurred!
+See also "/home/lmde/RetroPie-Setup/tmp/build/emulationstation/CMakeFiles/CMakeOutput.log".
+See also "/home/lmde/RetroPie-Setup/tmp/build/emulationstation/CMakeFiles/CMakeError.log".
+make: *** No rule to make target 'clean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
+Removing additional swap
+Could not successfully build emulationstation - EmulationStation - Frontend used by RetroPie for launching emulators (/home/lmde/RetroPie-Setup/tmp/build/emulationstation/emulationstation not found).
+/home/lmde/RetroPie-Setup
+
+Log ended at: Wed 30 Nov 2022 01:11:00 PM EST
+Total running time: 0 hours, 0 mins, 7 secs
