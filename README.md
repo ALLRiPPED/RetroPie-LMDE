@@ -8,9 +8,9 @@ Applies Tweaks to 0vercome Issues during a Basic Install of RetroPie on LMDE.
 ## INSTALLATION
 ```bash
 cd ~
-git clone --depth 1 https://github.com/RapidEdwin08/RetroPie-LMDE.git
-sudo chmod 755 ~/RetroPie-LMDE/rp_lmde.sh
-cd ~/RetroPie-LMDE && ./rp_lmde.sh
+wget https://raw.githubusercontent.com/RapidEdwin08/RetroPie-LMDE/main/rp_lmde.sh -P ~/
+sudo chmod 755 ~/rp_lmde.sh
+./rp_lmde.sh
 ```
 
 **Issues with Basic Install of RetroPie-Setup in LMDE:**  
