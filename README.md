@@ -2,7 +2,7 @@
 ![rp-lmde.png](https://raw.githubusercontent.com/RapidEdwin08/RetroPie-LMDE/main/rp-lmde.png )  
 
 Utility Script to assist with installing RetroPie on LMDE.  
-Applies Tweaks to 0vercome Issues during a Basic Install of RetroPie on LMDE.  
+Applies Tweaks to 0vercome Issues during a Basic Install of RetroPie on LMDE due to misidentified OS.  
 **NOTE:** *Successfully Tested on LMDE4 (Debbie) + LMDE5 (Elsie).*  
 
 ## INSTALLATION
@@ -14,8 +14,8 @@ sudo chmod 755 ~/rp_lmde.sh
 ```
 
 **Issues with Basic Install of RetroPie-Setup in LMDE:**  
-RetroPie-Setup identifies LMDE as a Debian derivative less than 9 and applies [libpng12-dev] instead of [libpng-dev].  
-EmulationStation Fails to make install.  
+RetroPie-Setup [helpers.sh] identifies LMDE as a Debian derivative less than 9 and applies [libpng12-dev] instead of [libpng-dev].  
+RetroPie-Setup [emulationstation.sh] attempts to install 0lder EmulationStation v2.6.7 and Fails make install (LMDE5).  
 
 **Tweaks Applied:**  
 *[~/RetroPie-Setup/scriptmodules/helpers.sh]*:  
