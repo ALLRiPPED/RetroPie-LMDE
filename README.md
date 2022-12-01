@@ -3,7 +3,7 @@
 
 Utility Script to assist with installing RetroPie on LMDE.  
 Applies Tweaks to 0vercome Issues during a Basic Install of RetroPie on LMDE due to misidentified OS.  
-**NOTE:** *Successfully Tested on LMDE4 (Debbie) + LMDE5 (Elsie).*  
+**NOTE:** *Tested with RetroPie-Setup v4.8.2 on LMDE4 (Debbie) + LMDE5 (Elsie).*  
 
 ## INSTALLATION
 ```bash
