@@ -15,7 +15,7 @@ sudo chmod 755 ~/rp_lmde.sh
 
 **Issues with Basic Install of RetroPie-Setup in LMDE:**  
 RetroPie-Setup misidentifies LMDE and applies [libpng12-dev] instead of [libpng-dev].  
-RetroPie-Setup misidentifies LMDE and attempts to install 0lder EmulationStation and Fails make install.  
+RetroPie-Setup misidentifies LMDE and attempts to install 0lder EmulationStation Failing make install.  
 
 **Tweaks Applied:**  
  *[[~/RetroPie-Setup/scriptmodules/system.sh](https://github.com/RetroPie/RetroPie-Setup/blob/085235d47904ed24973752f0f770cb653dfb42f0/scriptmodules/system.sh#L231-L245)]:*  
