@@ -97,7 +97,7 @@ if [ "$installESBflag" == '2' ]; then
 	if [ "$confGITrpsetup" == 'Y' ]; then
 		tput reset
 		# Abort RetroPie-Setup Already Found
-		if [ -d /opt/retropie/supplementary/emulationstation ]; then
+		if [ -d /home/$USER/RetroPie-Setup ]; then
 			dialog --no-collapse --title "   *[~/RetroPie-Setup] ALREADY EXISTS*  " --ok-label CONTINUE --msgbox "/home/$USER/RetroPie-Setup"  25 75
 			mainMENU
 		fi
