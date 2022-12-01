@@ -1,4 +1,9 @@
 # RetroPie-LMDE
+ * **Depricated** *  
+*The Changes Tweaks this Script applies have been 0fficially been committed to the RetroPie-Setup*.  
+*See Here:* *[systems: add support Linux Mint LMDE ](https://github.com/RetroPie/RetroPie-Setup/commit/2d12325a95e293e2a29e7563a9409594fd182a83)*  
+*This Script is No Longer Needed.  It is Left here for Reference 0nly*  
+
 ![rp-lmde.png](https://raw.githubusercontent.com/RapidEdwin08/RetroPie-LMDE/main/rp-lmde.png )  
 
 Utility Script to assist with installing RetroPie on LMDE.  
