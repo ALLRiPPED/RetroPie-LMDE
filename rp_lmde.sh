@@ -80,7 +80,7 @@ if [ "$installESBflag" == '1' ]; then
 		sudo apt-get install -y git dialog unzip xmlstarlet libboost-date-time-dev
 		sudo apt-get install -y libsdl2-dev libfreeimage-dev libfreetype6-dev libcurl4-openssl-dev rapidjson-dev libasound2-dev libgles2-mesa-dev build-essential cmake libvlc-dev libvlccore-dev vlc-bin fonts-droid-fallback
 		sudo apt-get install -y flex bison libglew-dev nasm
-		sudo apt-get install -y libsamplerate0-dev libspeexdsp-dev libpng-dev libboost-filesystem-dev libglew-dev nasm #libpng12-dev Depricated #libpng-dev
+		sudo apt-get install -y libsamplerate0-dev libspeexdsp-dev libpng-dev libboost-filesystem-dev #libpng12-dev Depricated #libpng-dev
 		
 		dialog --no-collapse --title "   *FINISHED* [INSTALL]  Prequisites for RetroPie and ES  " --ok-label CONTINUE --msgbox "$prereqsREF"  25 75
 	fi
@@ -118,6 +118,11 @@ if [ "$installESBflag" == '3' ]; then
 		B "BACK")
 	if [ "$confRPEStweaks" == 'Y' ]; then
 		tput reset
+		# Abort if LMDE Not Found
+		#if [ "$(lsb_release -sidrc | grep LMDE)" == '' ]; then
+			#dialog --no-collapse --title "LMDE NOT FOUND!" --ok-label CONTINUE --msgbox "THIS UTILITY SCRIPT IS FOR LMDE ONLY! \n \n Current Linux Standard Base: \n $(lsb_release -sidrc)"  25 75
+			#mainMENU
+		#fi
 		
 		# Abort if ES/Helper Scripts Not Found
 		if [ ! -f ~/RetroPie-Setup/scriptmodules/helpers.sh ]; then
@@ -154,7 +159,7 @@ if [ "$installESBflag" == '4' ]; then
 		B "BACK")
 	if [ "$confiRPsetup" == 'Y' ]; then
 		tput reset
-		# Abort if ES/Helper Scripts Not Found
+		# Abort if RetroPie-Setup Scripts Not Found
 		if [ ! -f ~/RetroPie-Setup/retropie_setup.sh ]; then
 			dialog --no-collapse --title "~/RetroPie-Setup/retropie_setup.sh NOT FOUND!" --ok-label CONTINUE --msgbox "DOWNLOAD RetroPie-Setup 1st! "  25 75
 			mainMENU
@@ -175,7 +180,7 @@ if [ "$installESBflag" == '5' ]; then
 		B "BACK")
 	if [ "$confMAKEes" == 'Y' ]; then
 		tput reset
-		cd ~
+		
 		# Abort Install if ES Not Found
 		if [ ! -d /opt/retropie/supplementary/emulationstation ]; then
 			dialog --no-collapse --title "   *EmulationStation NOT FOUND! *  " --ok-label CONTINUE --msgbox "INSTALL EmulationStation FROM RetroPie-Setup 1st! "  25 75
@@ -209,6 +214,11 @@ tput reset
 exit 0
 }
 
+# Alert if LMDE Not Found
+if [ "$(lsb_release -sidrc | grep LMDE)" == '' ]; then
+	dialog --no-collapse --title "LMDE NOT FOUND!" --ok-label CONTINUE --msgbox "THIS UTILITY SCRIPT IS FOR LMDE ONLY! \n \n Current Linux Standard Base: \n $(lsb_release -sidrc) \n \n *CONTINUE AT YOUR OWN RISK*"  25 75
+fi
+		
 mainMENU
 tput reset
 exit 0
