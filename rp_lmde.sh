@@ -140,7 +140,7 @@ if [ "$installESBflag" == '3' ]; then
 		cd ~/RetroPie-Setup/scriptmodules/
 		git apply "/home/$USER/RetroPie-Setup/scriptmodules/lmde_rpsetup.diff"
 		cd ~
-		dialog --no-collapse --title "   *FINISHED* [TWEAK] ES Install Script in [RetroPie-Setup] " --ok-label CONTINUE --msgbox "$(cat ~/RetroPie-Setup/scriptmodules/system.sh | tail -n +231 | head -22)"  25 75
+		dialog --no-collapse --title "   *FINISHED* [TWEAK] ES Install Script in [RetroPie-Setup] " --ok-label CONTINUE --msgbox "$(cat ~/RetroPie-Setup/scriptmodules/system.sh | tail -n +231 | head -23)"  25 75
 	fi
 	mainMENU
 fi
