@@ -125,16 +125,17 @@ if [ "$installESBflag" == '3' ]; then
 			#mainMENU
 		#fi
 		
-		# Abort if ES/Helper Scripts Not Found
+		# Abort if system Scripts Not Found
 		if [ ! -f ~/RetroPie-Setup/scriptmodules/system.sh ]; then
 			dialog --no-collapse --title "~/RetroPie-Setup/scriptmodules/system.sh NOT FOUND!" --ok-label CONTINUE --msgbox "DOWNLOAD RetroPie-Setup 1st! "  25 75
 			mainMENU
 		fi
 		
-		# Debian Bullseye UPDATES to [~/RetroPie-Setup/scriptmodules/helpers.sh]
+		# Backup system script
 		if [ ! -f ~/RetroPie-Setup/scriptmodules/system.sh.bak ]; then cp ~/RetroPie-Setup/scriptmodules/system.sh ~/RetroPie-Setup/scriptmodules/system.sh.bak; fi
 		
 		# Apply Updates for RetroPie 4.7.1 (202203) If Needed
+		sudo apt-get install -y git
 		wget https://raw.githubusercontent.com/RapidEdwin08/RetroPie-LMDE/main/lmde_rpsetup.diff -P /dev/shm
 		mv /dev/shm/lmde_rpsetup.diff ~/RetroPie-Setup/scriptmodules/
 		cd ~/RetroPie-Setup/scriptmodules/
