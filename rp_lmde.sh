@@ -26,14 +26,16 @@ tweaksREF=$(
 echo '
 
 
-[~/RetroPie-Setup/scriptmodules/helpers.sh]:
-compareVersions "$__os_debian_ver" lt 9 && pkg="libpng-dev" #LMDE
+[~/RetroPie-Setup/scriptmodules/system.sh]:
 
-
-[~/RetroPie-Setup/scriptmodules/supplementary/emulationstation.sh]:
-rp_module_repo="git https://github.com/RetroPie/EmulationStation.git"
-
-rp_module_licence="https://raw.githubusercontent.com/RetroPie/EmulationStation/master/LICENSE.md"
+            # Add LMDE
+            if [[ "$__os_desc" == LMDE* ]]; then
+                if compareVersions "$__os_release" lt 5; then
+                    __os_debian_ver=10
+                else
+                    __os_debian_ver=11
+                fi
+            fi
 
 ')
 
@@ -64,9 +66,8 @@ installESBflag=$(dialog --stdout --no-collapse --title "   [RetroPie] for LMDE  
 	--menu "$esbREF"  25 75 20 \
 	1 " [INSTALL]  Prequisites for RetroPie and ES" \
 	2 " [DOWNLOAD] [RetroPie-Setup]" \
-	3 " [TWEAK] ES/Helper Scripts in [RetroPie-Setup]" \
-	4 " [OPEN] [RetroPie-Setup]" \
-	5 " [INSTALL] emulationstation for LMDE" )
+	3 " [TWEAK] System Identifier Script in [RetroPie-Setup]" \
+	4 " [OPEN] [RetroPie-Setup]" )
 	
 if [ "$installESBflag" == '1' ]; then
 	confPREreqs=$(dialog --stdout --no-collapse --title " INSTALL Prequisites for RetroPie and EmulationStation" \
@@ -111,10 +112,10 @@ if [ "$installESBflag" == '2' ]; then
 fi
 
 if [ "$installESBflag" == '3' ]; then
-	confRPEStweaks=$(dialog --stdout --no-collapse --title " [TWEAK] ES/Helper Scripts in [RetroPie-Setup]" \
+	confRPEStweaks=$(dialog --stdout --no-collapse --title " [TWEAK] System Identifier Script in [RetroPie-Setup]" \
 		--ok-label OK --cancel-label Back \
 		--menu "                          ? ARE YOU SURE ?                            $tweaksREF" 25 75 20 \
-		Y "YES [TWEAK] ES/Helper Scripts in [RetroPie-Setup]" \
+		Y "YES [TWEAK] System Identifier Script in [RetroPie-Setup]" \
 		B "BACK")
 	if [ "$confRPEStweaks" == 'Y' ]; then
 		tput reset
@@ -125,28 +126,21 @@ if [ "$installESBflag" == '3' ]; then
 		#fi
 		
 		# Abort if ES/Helper Scripts Not Found
-		if [ ! -f ~/RetroPie-Setup/scriptmodules/helpers.sh ]; then
-			dialog --no-collapse --title "~/RetroPie-Setup/scriptmodules/helpers.sh NOT FOUND!" --ok-label CONTINUE --msgbox "DOWNLOAD RetroPie-Setup 1st! "  25 75
-			mainMENU
-		fi
-		if [ ! -f ~/RetroPie-Setup/scriptmodules/supplementary/emulationstation.sh ]; then
-			dialog --no-collapse --title "~/RetroPie-Setup/scriptmodules/supplementary/emulationstation.sh NOT FOUND!" --ok-label CONTINUE --msgbox "DOWNLOAD RetroPie-Setup 1st! "  25 75
+		if [ ! -f ~/RetroPie-Setup/scriptmodules/system.sh ]; then
+			dialog --no-collapse --title "~/RetroPie-Setup/scriptmodules/system.sh NOT FOUND!" --ok-label CONTINUE --msgbox "DOWNLOAD RetroPie-Setup 1st! "  25 75
 			mainMENU
 		fi
 		
 		# Debian Bullseye UPDATES to [~/RetroPie-Setup/scriptmodules/helpers.sh]
-		if [ ! -f ~/RetroPie-Setup/scriptmodules/helpers.sh.bak ]; then cp ~/RetroPie-Setup/scriptmodules/helpers.sh ~/RetroPie-Setup/scriptmodules/helpers.sh.bak; fi
-		# CHANGE: [compareVersions "$__os_debian_ver" lt 9 && pkg="libpng12-dev"] TO: [compareVersions "$__os_debian_ver" lt 9 && pkg="libpng-dev" #Debian Bullseye]
-		sed -i "s/pkg=\"libpng12-dev\"/pkg=\"libpng-dev\"\ #LMDE/g" ~/RetroPie-Setup/scriptmodules/helpers.sh
+		if [ ! -f ~/RetroPie-Setup/scriptmodules/system.sh.bak ]; then cp ~/RetroPie-Setup/scriptmodules/system.sh ~/RetroPie-Setup/scriptmodules/system.sh.bak; fi
 		
-		# Debian Bullseye UPDATES to [~/RetroPie-Setup/scriptmodules/supplementary/emulationstation.sh]
-		if [ ! -f ~/RetroPie-Setup/scriptmodules/supplementary/emulationstation.sh.bak ]; then cp ~/RetroPie-Setup/scriptmodules/supplementary/emulationstation.sh ~/RetroPie-Setup/scriptmodules/supplementary/emulationstation.sh.bak; fi
-		# CHANGE: [rp_module_licence="MIT https://raw.githubusercontent.com/RetroPie/EmulationStation/master/LICENSE.md"] TO: [rp_module_licence="https://raw.githubusercontent.com/RetroPie/EmulationStation/master/LICENSE.md"]
-		# CHANGE: [rp_module_repo="git https://github.com/RetroPie/EmulationStation :_get_branch_emulationstation"] TO: [rp_module_repo="git https://github.com/RetroPie/EmulationStation.git"]
-		sed -i "s/rp_module_licence=.*/rp_module_licence=\"https:\/\/raw.githubusercontent.com\/RetroPie\/EmulationStation\/master\/LICENSE.md\"/g" ~/RetroPie-Setup/scriptmodules/supplementary/emulationstation.sh
-		sed -i "s/rp_module_repo=.*/rp_module_repo=\"git https:\/\/github.com\/RetroPie\/EmulationStation.git\"/g" ~/RetroPie-Setup/scriptmodules/supplementary/emulationstation.sh
-		
-		dialog --no-collapse --title "   *FINISHED* [TWEAK] ES Install Script in [RetroPie-Setup] " --ok-label CONTINUE --msgbox "$tweaksREF"  25 75
+		# Apply Updates for RetroPie 4.7.1 (202203) If Needed
+		wget https://raw.githubusercontent.com/RapidEdwin08/RetroPie-LMDE/main/lmde_rpsetup.diff -P /dev/shm
+		mv /dev/shm/lmde_rpsetup.diff ~/RetroPie-Setup/scriptmodules/
+		cd ~/RetroPie-Setup/scriptmodules/
+		git apply "/home/$USER/RetroPie-Setup/scriptmodules/lmde_rpsetup.diff"
+		cd ~
+		dialog --no-collapse --title "   *FINISHED* [TWEAK] ES Install Script in [RetroPie-Setup] " --ok-label CONTINUE --msgbox "$(cat ~/RetroPie-Setup/scriptmodules/system.sh | tail -n +231 | head -22)"  25 75
 	fi
 	mainMENU
 fi
@@ -172,44 +166,6 @@ if [ "$installESBflag" == '4' ]; then
 	mainMENU
 fi
 
-if [ "$installESBflag" == '5' ]; then	
-	confMAKEes=$(dialog --stdout --no-collapse --title " [INSTALL] emulationstation for LMDE" \
-		--ok-label OK --cancel-label Back \
-		--menu "                          ? ARE YOU SURE ?                            $cmakeREF" 25 75 20 \
-		Y "YES [INSTALL] emulationstation for LMDE" \
-		B "BACK")
-	if [ "$confMAKEes" == 'Y' ]; then
-		tput reset
-		
-		# Abort Install if ES Not Found
-		if [ ! -d /opt/retropie/supplementary/emulationstation ]; then
-			dialog --no-collapse --title "   *EmulationStation NOT FOUND! *  " --ok-label CONTINUE --msgbox "INSTALL EmulationStation FROM RetroPie-Setup 1st! "  25 75
-			mainMENU
-		fi
-		
-		#Backup Current ES
-		if [ ! -d /opt/retropie/supplementary/emulationstation_bak ]; then sudo mv /opt/retropie/supplementary/emulationstation /opt/retropie/supplementary/emulationstation_bak; fi
-		
-		# REMOVE Current ES AFTER Backing up
-		if [ -d /opt/retropie/supplementary/emulationstation ]; then sudo rm /opt/retropie/supplementary/emulationstation -R -f; fi
-		
-		# cmake make ES in its Final Installation Directory
-		cd /opt/retropie/supplementary/
-		sudo git clone --recursive https://github.com/RetroPie/EmulationStation.git
-		sudo mv /opt/retropie/supplementary/EmulationStation/ /opt/retropie/supplementary/emulationstation/
-		cd /opt/retropie/supplementary/emulationstation/
-		sudo cmake .
-		sudo make
-		cd /opt/retropie/supplementary/
-		
-		#sudo cp -R /opt/retropie/supplementary/emulationstation_bak/resources /opt/retropie/supplementary/emulationstation/resources
-		sudo cp -R /opt/retropie/supplementary/emulationstation_bak/scripts /opt/retropie/supplementary/emulationstation/scripts
-		
-		cd ~
-		dialog --no-collapse --title "   *FINISHED* [INSTALL] emulationstation for LMDE" --ok-label CONTINUE --msgbox "$cmakeREF"  25 75
-	fi
-	mainMENU
-fi
 tput reset
 exit 0
 }
