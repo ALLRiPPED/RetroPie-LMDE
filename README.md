@@ -1,13 +1,12 @@
 # RetroPie-LMDE
- * **Depricated** *  
-*The Tweaks this Script applies have been 0fficially committed to RetroPie-Setup*.  
+ * **NOTE** *  
+*The Tweaks Applied by this Script have been 0fficially committed to RetroPie-Setup and are No Longer Needed*.  
 *See Here:* *[systems: add support Linux Mint LMDE ](https://github.com/RetroPie/RetroPie-Setup/commit/2d12325a95e293e2a29e7563a9409594fd182a83)*  
-*This Script is No Longer Needed.  It is Left here for Reference 0nly*  
 
 ![rp-lmde.png](https://raw.githubusercontent.com/RapidEdwin08/RetroPie-LMDE/main/rp-lmde.png )  
 
 Utility Script to assist with installing RetroPie on LMDE.  
-Applies Tweaks to 0vercome Issues during a Basic Install of RetroPie on LMDE due to misidentified OS.  
+*Applies Tweaks to 0vercome Issues during a Basic Install of RetroPie on LMDE due to misidentified OS. (Deprecated)*  
 **NOTE:** *Tested with RetroPie-Setup v4.8.2 on LMDE4 (Debbie) + LMDE5 (Elsie).*  
 
 ## INSTALLATION
