@@ -1,17 +1,15 @@
---- a/system.sh	2022-11-30 10:05:02.778165000 -0500
-+++ b/system.sh	2022-12-01 09:16:56.226352292 -0500
-@@ -243,6 +243,14 @@
+diff -ur a/system.sh b/system.sh
+--- a/system.sh	2023-10-01 15:18:48.616765777 -0400
++++ b/system.sh	2023-10-01 15:21:32.864677803 -0400
+@@ -252,8 +252,10 @@
+                     error="You need Linux Mint Debian Edition 4 or newer"
+                 elif compareVersions "$__os_release" lt 5; then
+                     __os_debian_ver="10"
+-                else
++                elif compareVersions "$__os_release" lt 6; then
                      __os_debian_ver="11"
++                else
++                    __os_debian_ver="12"
                  fi
              fi
-+            # Add LMDE
-+            if [[ "$__os_desc" == LMDE* ]]; then
-+                if compareVersions "$__os_release" lt 5; then
-+                    __os_debian_ver=10
-+                else
-+                    __os_debian_ver=11
-+                fi
-+            fi
              ;;
-         Ubuntu|[Nn]eon|Pop)
-             if compareVersions "$__os_release" lt 16.04; then
